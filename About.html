@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css file/Navbar.css">
+        <link rel="stylesheet" type="text/css" href="../css file/About.css">
+        <link rel="stylesheet" type="text/css" href="../css file/goTop.css">
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <title>Hobby: Crochet Blog</title>
+
+        <script>
+        function showPicture(theImg) {
+            // statement that show the selected image
+            document.getElementById("selectedImage").src = theImg.src;
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <ul class="Navbar">        
+                <li style="float: left;"><a href="Home.html"><img class="logo" src="../Pictures/logo2.png" alt="Grannytoh Logo"></a></li>                
+                <li><a href="Form.html">Contact</a></li>
+                <li><a href ="#" class="current">About</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Tutorial.html">Tutorial</a></li>
+                <li><a href="Home.html">Home</a></li>
+            </ul>
+        </header>
+        <h1>Who am i?</h1>
+        <div class="c1">My name is Zac Toh, and this is not my real name. It is both my nickname and my surname.
+            My blog name gets its name from my family name, and many people believe that those who enjoy these 
+            hobbies are granny/old people, which is why my site is called GrannyToh.
+        </div>
+        
+        <h2>Why did i start crocheting?</h2>
+        <div class="c1">I began crocheting because I wanted to make a handmade gift for my significant other.
+            When my friends saw what I had made, several of them expressed an interest to learn as well! 
+            So I reasoned, "Why not?" Have a place where I can share my knowledge and assist other crocheters.
+            I've been crocheting for a little over two years.
+        </div>
+        
+        <h2>What is crochet to me?</h2>
+        <div class="c1">Crochet is a form of art that involves putting stitches together, patching them up, 
+            and creating something unique with yarn and a hook. There is no right or wrong, and it does 
+            not need to be perfectly stitched.
+        </div>  
+        
+        <br>
+        <hr>
+
+        <h1 style="text-align: center;"><em>My crochet collection</em></h1>
+
+        <img id="selectedImage" src="../Pictures/img1.JPG"/>
+        <div id="imageDiv">
+        <ul>
+        <li><img src="../Pictures/img1.JPG" onclick="showPicture(this);" alt="Bag"/></li>
+        <li><img src="../Pictures/img2.JPG" onclick="showPicture(this);"/></li>
+        <li><img src="../Pictures/img6.PNG" onclick="showPicture(this);"></li>
+        <li><img src="../Pictures/img5.PNG" onclick="showPicture(this);"/></li>
+        <li><img src="../Pictures/img3.JPG" onclick="showPicture(this);"/></li>
+        </ul>
+        </div>
+        <br>
+        <p>My Socials: </p>
+        <div class="socials">
+        <a href="https://www.instagram.com/zactoh_/" target="_blank"><img src="../Pictures/instagramlogo.png"></a>
+        <a href="https://www.tiktok.com/@zactoh_?_t=8e2WdN2DD5G&_r=1" target="_blank"><img src="../Pictures/tiktoklogo.png"></a>
+        </div>
+
+        <button onclick="goTopFunction()" id="myBtn" title="Go to top">↑</button>
+        <script type="text/javascript" src="../goTop.js"></script>
+    </body>
+</html>

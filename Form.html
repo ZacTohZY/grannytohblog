@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css file/Navbar.css">
+        <link rel="stylesheet" type="text/css" href="../css file/Form.css">
+        <link rel="stylesheet" type="text/css" href="../css file/goTop.css">
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <title>Hobby: Crochet Blog</title>
+    </head>
+
+        <header>
+            <ul class="Navbar">                        
+                <li style="float: left;"><a href="Home.html"><img class="logo" src="../Pictures/logo2.png" alt="Grannytoh Logo"></a></li>
+                <li><a href="#" class="current">Contact</a></li>
+                <li><a href ="About.html">About</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Tutorial.html">Tutorial</a></li>
+                <li><a href="Home.html">Home</a></li>
+            </ul>
+        </header>
+        
+        <br><br>
+
+        <div class="c1">I would be delighted to help any crocheters and would love to 
+            see all of your one-of-a-kind crochet creations!
+            Please contact me at <a href="mailto:zactoh0503@gmail.com">zactoh0503@gmail.com</a> 
+            or fill out the form below! By filling out the form below, everyone can assist you 
+            with your problem or share your masterpiece so that everyone can view your incredible creations.
+        </div>
+
+        <br><br>
+
+        <form onsubmit="event.preventDefault();">
+            <fieldset>
+                <label for="name">Name: </label><input type="text" id="name" placeholder="Nickname/Name" required>
+                <br><br>
+                <label for="email">Email: </label><input type="email" id="email" placeholder="abc@gmail.com" 
+                pattern=".+@globex\.com" required>
+                <br><br>
+                <label for="file">File: </label><input type="file" id="picture" accept="image/*" required>
+                <br><br>
+                <label for="message">Message:</label><textarea id="message" placeholder="...share your experience/problem/feedback" required></textarea>
+                <br><button type="button" onclick="submitComment()" class="cbutton">Send</button>
+                <input type="reset" value="Reset" class="cbutton">
+            </fieldset>
+        </form>
+
+            <br><br>
+
+            <fieldset>
+                <legend>Forum: </legend>
+                <div id="commentsList">
+                    Kai (kai@gmail.com):<br>
+                    Example 1
+                    <hr>
+                    Ryu (ryu@hotmail.com):<br>
+                    Example 2
+                    <hr>
+                </div>
+            </fieldset>
+            
+        <br>
+
+        <button onclick="goTopFunction()" id="myBtn" title="Go to top">↑</button>
+        <script type="text/javascript" src="../goTop.js" ></script>
+
+        <script>
+            // Function to submit a new comment
+            function submitComment() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const fileInput = document.getElementById("picture");
+            const message = document.getElementById("message").value;
+
+            if (name.trim() === "" || message.trim() === "" || email.trim() === "" || !fileInput.files[0]) {
+
+                alert("Please fill out all fields.");
+                return;
+
+            } 
+            else {
+
+            const commentItem = document.createElement('div');
+            commentItem.innerHTML = `${name} (${email}):<br>${message}<br>`;
+
+            // Read the selected file and display it as an image
+                const file = fileInput.files[0]; //retrieve selected file put into array
+                if (file) {
+                    const reader = new FileReader(); //read file selected
+                    reader.onload = function(event) {
+                    const img = new Image(); //html element can be used to display an img on web page
+                    img.src = event.target.result;//assign data url to src attribute making img display selected img
+                    img.style.width = "400px"; // Set width for the displayed image
+                    img.style.height= "auto"; // Maintain aspect ratio
+                    commentItem.appendChild(img); // Add the image to the comment
+                    
+                    const hr = document.createElement('hr'); // Create <hr> element
+                    commentItem.appendChild(hr); // Add <hr> after the image
+                    }
+                reader.readAsDataURL(file); //excute
+                }
+
+                document.getElementById('commentsList').appendChild(commentItem); // add new line of comment, one after one comment
+
+                // Clear input fields after submission
+                document.getElementById('name').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('picture').value = "";
+                document.getElementById('message').value = "";
+
+                alert("Your message has been successfully posted!");
+
+                }
+            } 
+        </script>
+    </body>
+</html>

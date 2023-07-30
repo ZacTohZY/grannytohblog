@@ -1,0 +1,57 @@
+body{
+	text-align: center;
+	font-family: 'Aclonica';
+	background-color: rgba(175, 192, 143, 0.527);
+}
+
+p{
+	font-size: small;
+}
+
+#imageDiv img {
+	width:130px;
+	height:100px;
+	border:1px solid white;
+}
+
+#imageDiv {
+	width:900px;
+	height:110px;
+	margin: auto;
+}
+
+#imageDiv li {
+	display:inline-block;
+	width:130px;
+	height:110px;
+	margin: 10px 10px;
+}
+
+#imageDiv img:hover {
+	border:8px solid olivedrab;
+	border-style:double;
+}
+
+#selectedImage {
+	width:550px;
+	height:325px;
+	display:block;
+	margin:auto;
+}
+
+.socials img{
+	height: 50px;
+	width: 50px;
+	margin: 5px 5px;
+	font-size: small;
+}
+
+hr{
+	height: 10px;
+	background-color: rgba(83, 116, 83, 0.703);
+}
+.c1{
+	width: 70%;
+	margin-left: 15%;
+	text-align: justify;
+}

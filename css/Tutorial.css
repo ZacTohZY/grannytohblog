@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    font-family: 'Aclonica';
+    background-color: rgba(175, 192, 143, 0.527);
+}
+.column{
+    width: 350px;
+    height: 350px;
+    margin: 12px 20px;
+    
+  }
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+hr{
+	height: 10px;
+	background-color: rgba(83, 116, 83, 0.703);
+}
